@@ -33,7 +33,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 #### Database data insertion
-Go to '/admin/' and create 'Infos' and 'Project' models
+Run Server, Go to '/admin/' and create 'Infos' and 'Project' models
 
 
 ## In Action
