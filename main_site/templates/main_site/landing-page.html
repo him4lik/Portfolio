@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% load static %}
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <title>
+         {{applicant.first_name}}-portfolio
+      </title>
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+      <!-- CSS Files -->
+      <link href="{% static 'main_site/css/bootstrap.min.css'%}" rel="stylesheet" />
+      <link href="{% static 'main_site/css/paper-kit.css'%}" rel="stylesheet" />
+   </head>
+   <body class="landing-page sidebar-collapse">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
+         <div class="container">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a href="#projects" class="nav-link"> Projects</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="#contact" class="nav-link">Contact</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="page-header" data-parallax="true" style="background-image: url({% static 'main_site/img/header.jpg'%}");>
+         <div class="container">
+            <div class="motto row">
+               <div>
+                  <br/><br/>
+                  <h3>Hi!</h3>
+                  <h1>I'm {{applicant.name}}</h1>
+                  <h4>{{applicant.intro_line}}</h4>
+               </div>
+               <div class="col-sm-3 col-md-3 mr-auto ml-auto">
+                  <img src="{{applicant.photo.url}}" class="img-circle  img-responsive" alt="Rounded Image">
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <div class="main">
+      <div class="section text-center">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 ml-auto mr-auto">
+                  <h2 class="title">About Me</h2>
+                  <h5 class="description">{{applicant.about}}</h5>
+               </div>
+            </div>
+            <h3 class="title">Skills Stack</h3>
+            <div class="row">
+               <div class="col-md-3">
+                  <div class="info">
+                     <div class="icon icon-danger">
+                        <img src="{% static 'main_site/img/pyth.png' %}" class="col-sm-4 col-md-4 mr-auto ml-auto" alt="Rounded Image">
+                     </div>
+                     <div class="description">
+                        <h5 class="info-title">Python</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="info">
+                     <div class="icon icon-danger">
+                        <img src="{% static 'main_site/img/dj.png' %}" class="col-sm-4 col-md-4 mr-auto ml-auto" alt="Rounded Image">
+                     </div>
+                     <div class="description">
+                        <h5 class="info-title">Django</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="info">
+                     <div class="icon icon-danger">
+                        <img src="{% static 'main_site/img/mysql.png' %}" class="col-sm-4 col-md-4 mr-auto ml-auto" alt="Rounded Image">
+                     </div>
+                     <div class="description">
+                        <h5 class="info-title">MySQL</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="info">
+                     <div class="icon icon-danger">
+                        <img src="{% static 'main_site/img/git.png' %}" class="col-sm-4 col-md-4 mr-auto ml-auto" alt="Rounded Image">
+                     </div>
+                     <div class="description">
+                        <h5 class="info-title">Git/Github</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <br/><br/>
+            <div>
+               <a href={{applicant.resume.url}} class="btn btn-outline-default btn-round" download>Download RESUME</a>
+            </div>
+         </div>
+      </div>
+      <div class="section section-dark  text-center">
+      <div class="container">
+      <a id="projects" >
+         <h2 class="title">Projects</h2>
+      </a>
+      <div class="row">
+      {%for project in projects%}
+      <div class="col-md-6">
+         <div class="card card-profile card-plain">
+            <div>
+               <a>
+               <img src="{{project.image.url}}" alt="...">
+               </a>
+            </div>
+            <div class="card-body">
+               <a href="#paper-kit">
+                  <div class="author">
+                     <h4 class="card-title">{{project.name}}</h4>
+                  </div>
+               </a>
+               <p class="card-description text-center">
+                  {{project.description}}                
+               </p>
+               <p class="card-description text-center">
+                  <a href={{project.github_link}} class='btn btn-default'>Code</a>
+               </p>
+            </div>
+         </div>
+      </div>
+      {%endfor%}
+      <div class="main">
+      <div class="section text-center">
+         <div class="container">
+            <a id='contact'>
+               <h2 class="title">Contact Me:</h2>
+            </a>
+            <br/><br/><br/><br/>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="info">
+                     <div class="icon icon-danger">
+                        <img src="{% static 'main_site/img/gmail.png' %}" class="col-sm-4 col-md-4 mr-auto ml-auto" alt="Rounded Image">
+                     </div>
+                     <div>
+                        <h5 >{{applicant.email}}</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="info">
+                     <div class="icon icon-danger">
+                        <img src="{% static 'main_site/img/phone.png' %}" class="col-sm-4 col-md-4 mr-auto ml-auto" alt="Rounded Image">
+                     </div>
+                     <div >
+                        <h5>{{applicant.phone}}</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="info">
+                     <div class="icon icon-danger">
+                        <img src="{% static 'main_site/img/gith.png' %}" class="col-sm-4 col-md-4 mr-auto ml-auto" alt="Rounded Image">
+                     </div>
+                     <div>
+                        <h5>{{applicant.github}}</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+         </div>
+      </div>
+      <footer class="footer   section-dark ">
+         Portfolio- {{applicant.first_name}}
+      </footer>
+   </body>
+</html>
+
