@@ -37,5 +37,4 @@ Run Server, Go to '/admin/' and create 'Infos' and 'Project' models
 
 
 ## In Action
-#### Frontend Page view
-#### Download Resume and Project Links
+
