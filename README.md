@@ -37,4 +37,5 @@ Run Server, Go to '/admin/' and create 'Infos' and 'Project' models
 
 
 ## In Action
+![him7](https://user-images.githubusercontent.com/75934883/127551050-84167222-b26d-4046-9d21-384ff0808f1b.gif)
 
