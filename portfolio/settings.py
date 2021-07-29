@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolio',
-        'USER': 'root',
-        'PASSWORD': 'google123',
+        'NAME':'your_database_name',
+        'USER': 'database_username',
+        'PASSWORD': 'database_password',
     }
 }
 
@@ -130,9 +130,3 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST='smpt.gmail.com'
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER='him4lik@gmail.com'
-EMAIL_HOST_PASSWORD='QeYp1360!@^)'
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
